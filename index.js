@@ -36,7 +36,7 @@ app.post("/add-movie", uploadImage, async (req, res) => {
 
 app.get("/movies", async (req, res) => {
 	try {
-		const movies = await Movie.find();
+		const movies = await movie.find();
 		res.render("movies.ejs", { movies });
 	} catch (error) {
 		console.error("Error fetching movies:", error);

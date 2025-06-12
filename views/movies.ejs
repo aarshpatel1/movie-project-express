@@ -10,9 +10,11 @@
 </head>
 
 <body data-bs-theme="dark" class="bg-secondary-subtle">
-    <h1>Movies</h1>
 
     <div class="container">
+        
+        <h1 class="my-3">Movies</h1>
+
         <table class="table table-dark table-striped">
             <thead>
                 <tr>
@@ -42,13 +44,13 @@
                         <td>
                             <%= movie.description %>
                         </td>
-                        <td><img src="<%= movie.poster %>" alt="Poster" style="width: 100px;"></td>
+                        <td><img src="<%= movie.poster %>" alt="Poster" width="100" class="rounded-circle" height="100"></td>
                     </tr>
                     <% }) %>
             </tbody>
         </table>
 
-        <a href="/add-movie" class="btn btn-primary">Add Movie</a>
+        <a href="/" class="btn btn-primary">Add Movie</a>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
