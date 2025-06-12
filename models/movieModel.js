@@ -1,8 +1,23 @@
 import mongoose from "mongoose";
 import multer from "multer";
+import path from "path";
 
 const movieSchema = new mongoose.Schema({
 	title: {
+		type: String,
+		required: true,
+	},
+	year: {
+		type: Number,
+		required: true,
+	},
+	rating: {
+		type: Number,
+		required: true,
+		min: 0,
+		max: 10,
+	},
+	genre: {
 		type: String,
 		required: true,
 	},
@@ -10,21 +25,17 @@ const movieSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	image: {
+	poster: {
 		type: String,
 		required: true,
 	},
-	video: {
+	created_at: {
 		type: String,
-		required: true,
+		require: true,
 	},
-	genre: {
+	updated_at: {
 		type: String,
-		required: true,
-	},
-	releaseDate: {
-		type: Date,
-		required: true,
+		require: true,
 	},
 });
 
@@ -32,13 +43,14 @@ const Movie = mongoose.model("Movie", movieSchema);
 
 export const storage = multer.diskStorage({
 	destination: (req, file, cb) => {
-		cb(null, "public/uploads");
+		cb(null, "uploads");
 	},
 	filename: (req, file, cb) => {
-		cb(null, Date.now() + "-" + file.originalname);
+		const ext = path.extname(file.originalname);
+		cb(null, file.fieldname + "-" + Date.now() + ext);
 	},
 });
 
-export const uploadImage = multer({ storage: storage }).single("image");
+export const uploadImage = multer({ storage: storage }).single("poster");
 
 export default Movie;
