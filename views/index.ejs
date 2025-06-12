@@ -28,7 +28,28 @@
                 required>
 
             <label for="genre">Movie Genre</label>
-            <input type="text" name="genre" id="genre" class="form-control mb-3" required>
+            <div class="mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="genres" id="genre-action" value="Action">
+                    <label class="form-check-label" for="genre-action">Action</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="genres" id="genre-comedy" value="Comedy">
+                    <label class="form-check-label" for="genre-comedy">Comedy</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="genres" id="genre-drama" value="Drama">
+                    <label class="form-check-label" for="genre-drama">Drama</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="genres" id="genre-horror" value="Horror">
+                    <label class="form-check-label" for="genre-horror">Horror</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="genres" id="genre-sci-fi" value="Sci-Fi">
+                    <label class="form-check-label" for="genre-sci-fi">Sci-Fi</label>
+                </div>
+            </div>
 
             <label for="description">Movie Description</label>
             <textarea name="description" id="description" class="form-control mb-3" rows="3" required></textarea>
