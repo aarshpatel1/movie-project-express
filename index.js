@@ -24,7 +24,6 @@ app.post("/add-movie", uploadImage, async (req, res) => {
 			created_at: moment().format("L LTS"),
 			updated_at: moment().format("L LTS"),
 		};
-		console.log("Movie Data:", movieData);
 		await movie.create(movieData);
 
 		res.redirect("/");
